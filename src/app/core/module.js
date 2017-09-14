@@ -9,9 +9,15 @@ require('angular-material');
 
 //local modules
 require('./../screens/start-screen/module');
+require('./../web-components/module');
 
 angular
-    .module('servesom', ['ui.router', 'start-screen', 'ngMaterial']);
+    .module('servesom', [
+        'ui.router',
+        'start-screen',
+        'ngMaterial',
+        'web-components'
+    ]);
 
 //module internal components
 require('./routeConfig.js');
