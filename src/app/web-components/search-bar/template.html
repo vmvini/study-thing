@@ -1,3 +1,27 @@
 <div class="search-bar">
-    <h1>search bar directive</h1>
+    <div ng-cloak>
+        <md-content layout-padding layout="column">
+            <form ng-submit="$event.preventDefault()">
+                <md-autocomplete ng-disabled="vm.isDisabled" md-no-cache="vm.noCache" md-selected-item="vm.selectedItem" md-search-text-change="vm.searchTextChange(vm.searchText)" md-search-text="vm.searchText" md-selected-item-change="vm.selectedItemChange(item)" md-items="item in vm.querySearch(vm.searchText)"
+                    md-item-text="item.name" md-min-length="0" placeholder="Digite o nome da música" md-menu-class="autocomplete-custom-template">
+                    <md-item-template>
+                        <span class="item-title">
+            <md-icon md-svg-icon="img/icons/octicon-repo.svg"></md-icon>
+            <span> {{item.name}} </span>
+                        </span>
+                        <span class="item-metadata">
+            <span>
+              <strong>{{item.watchers}}</strong> watchers
+            </span>
+                        <span>
+              <strong>{{item.forks}}</strong> forks
+            </span>
+                        </span>
+                    </md-item-template>
+                </md-autocomplete>
+            </form>
+        </md-content>
+    </div>
+
+
 </div>
